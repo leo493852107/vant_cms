@@ -7,6 +7,7 @@ import MeContainer from "./components/tabbar/MeContainer.vue";
 
 const router = new VueRouter({
   routes: [
+    { path: "/", redirect: "/home" },
     { path: "/home", component: HomeContainer },
     { path: "/shop", component: ShopContainer },
     { path: "/hot", component: HotContainer },

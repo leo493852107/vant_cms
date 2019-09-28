@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="app-container">
     <!-- nav bar -->
     <van-nav-bar
       title="标题"
@@ -11,7 +11,10 @@
     />
 
     <!-- tabbar -->
-    <router-view></router-view>
+    <transition>
+      <router-view></router-view>
+    </transition>
+
     <van-tabbar route>
       <van-tabbar-item replace to="/home" icon="wap-home-o" dot>主页</van-tabbar-item>
       <van-tabbar-item replace to="/shop" icon="shopping-cart-o" info="5">购物车</van-tabbar-item>
@@ -49,5 +52,25 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.app-container {
+  // padding-top: 40px;
+  overflow-x: hidden;
+}
+
+.v-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.v-leave-to {
+  opacity: 0;
+  transform: translateX(-100%);
+  position: absolute;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.8s ease;
+}
 </style>
