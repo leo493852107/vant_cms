@@ -19,3 +19,9 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+node_modules
+.idea
+.vscode
+.git
+
